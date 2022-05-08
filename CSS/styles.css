@@ -1,0 +1,36 @@
+
+/* 全域屬性 */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(1, 56, 1);
+    padding: 10px;
+}
+
+/* 繼承 inherit 父屬性 */
+.page {
+    border: 5px solid rgb(94, 46, 5);
+    background-color:antiquewhite;
+    padding: inherit;
+}
+
+/* 尋找 <ｐ> 裡面的 <del> */
+p del {
+    color: blue;
+}
+
+
+.password{
+    border-left: 10px solid blue;
+}
+
+/* 鼠標移動到會觸發 */
+a:hover{
+    color: blue;
+}
+
+/* 固定 width 值（padding＊2 border*2 值不影響總寬） */
+*,*:before,*:after{
+    box-sizing:border-box;
+}
+
+/* 將行內元素改變成區塊元素 display:block */

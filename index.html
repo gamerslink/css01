@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Basic</title>
+    <link href="CSS/styles.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <!-- 常用標籤 -->
+    <h1>header</h1>
+    <address>email : ABC@example.com <br/> address :  </address>
+    <hr/>
+    <div class="page">
+    <a href="mailto:ABC@example.com">Mail example</a>
+    <p>段落</p>
+    <ins>插入內容</ins>
+    <p><del>刪除線, 顯示被刪除的內容</del></p>
+    <p><s>刪除線, 標示不再正確的內容</s></p>
+    <p>氧氣 : O<sub>2</sub></p>
+    <p>2次方 : 2<sup>2</sup></p>
+    </div>
+ 
+    <!--form表單 action＝ＵＲＬ method = push or get-->
+    <!-- 文字與密碼輸入 -->
+    <div class="password">
+    <form action="www.example.com/login.php">
+        <a>Username
+        <input type="text" name="Username" method="get" size="15" maxlength="30"/>
+        </a>
+        <br/>
+        <a>Password
+        <input type="text" name="password" method="push" size="15" maxlength="30"/>
+        </a>
+    </form>
+    </div>
+
+    <hr/>
+
+    <!--多行文字輸入區-->
+    <!-- cols = 文字區塊寬度 rows = 文字區塊占幾行 -->
+    <!-- ※應由 CSS 控制 textarea 來設定 cols, rows-->
+    <form action="www.example.com/comments.php">
+        <p>what do you thing gig?</p>
+        <textarea cols="20" rows="4">Enter your comment... </textarea>
+    </form>
+    <hr/>
+    <!-- type = "radio" 屬性允許選擇一個選項-->
+    <form action="www.example.com/profile.php">
+        <a>please sent your favorite genre :
+        <br/>
+        <input type="radio" name="genre" value="rock" checked="checked"/> Rock
+        <input type="radio" name="genre" value="pop" checked="checked"/> Pop
+        <input type="radio" name="genre" value="jazz" checked="checked"> Jazz
+        </a>
+    </form>
+    <hr/>
+    <!-- type = "checkbox" 屬性允許多選項-->
+    <form action="www.example.com/profile.php">
+        <p>please select your favorite genre :
+        <br/>
+        <input type="checkbox" name="genre" value="rock" checked="checked"> Rock
+        <input type="checkbox" name="genre" value="pop" checked="checked"> Pop
+        <input type="checkbox" name="genre" value="jezz" checked="checked"> Jezz
+        </p>
+    </form>
+    <hr/>
+    <!-- type = "select" 屬性下拉式選項-->
+    <form action="www.example.com/profile.php">
+        <p>what device do you listen to music on ? </p>
+        <select name="device">
+        <option value="ipod">ipod</option>
+        <option value="radio">radio</option>
+        <option value="computer">computer</option>
+        </select>
+    </form>
+
+    <hr/>
+
+    <!-- type="file" 產生一個欄位跟 browse 按鈕, 上傳檔案 method 必須為"post" -->
+    <!-- type="submit" 將表單傳送伺服器, value="設定送出按鈕文字" -->
+    <form action="http://www.exapmle.com/upload.php" method="post">
+        <p>Upload your song in MP3 format: </p>
+        <input type="file" name="user-song"/> <br/>
+        <input type="submit" value="Upload"/>
+    </form>
+    <hr/>
+    <!-- type="submit" 表單傳送伺服器 -->
+    <form action="http://www.exapmle.com/subscribe.php" method="post">
+        <p>Subscribe to our list : </p>
+        <input type="text" name="email"/>
+        <input type="submit" value="Subscribe"/>
+    </form>  
+
+    <hr/>
+    <!-- button 按鈕, type = "hidden" 隱藏按鈕 -->
+    <form action="http://www.example.com/add.php">
+        <button><img src="images/add.gif" alt="add" width="10" height="10"/> add</button>
+        <input type="hidden" name="bookmark" value="lyrics"/>
+    </form>
+    <hr/>
+    <!-- label 為表單控制項貼標籤-->
+    <label>Age : <input type="text" name="age" /></label>
+    <br/>
+    Gender :
+    <input id="female" type="radio" name="gender" value="f">
+    <label for="female">female</label>
+    <input id="male" type="radio" name="gender" value="m">
+    <label for="male">male</label>
+
+    <hr/>
+    <!-- HTML5 表單驗證 -->
+    <!--將資料送到伺服器之前, 先驗證表單, 優點:減少伺服器工作量, 使用者可先知道表單是否有問題-->
+    <form action="http:www.example.com/login/" method="post">
+        <label for="username">Username : </label>
+        <input type="text" name="username" required="required"/></title><br/>
+        <label for="password">Password : </label>
+        <input type="password" name="password" required="required"/>
+        <input type="submit" value="Submit"/>
+    </form>
+
+    <hr/>
+    <!-- HTML5 日期輸入 -->
+    <!--使用<input>元素, 值設為"date", 將建立一個日期輸入-->
+    <form action="http:www.example.com/bookings/" method=""post>
+        <label for="username">Departure date:</label>
+        <input type="date" name="depart">
+        <input type="submit" value="Submit"/>
+    </form>
+    <hr/>
+    <!-- HTML5 : EMAIL 和 URL 輸入  -->
+    <form action="http://www.example.org/subscribe.php">
+        <p>please enter your email address :</p>
+        <input type="email" name="email"/>
+        <input type="submit" name="submit">
+    </form>
+    <hr/>
+    <!--HTML5 : 搜尋輸入 -->
+    <form action="http://www.example.com/search.php"/>
+	<p>Search : </p>
+	<input type="search" name="search" placeholder="enter keyword"/>
+	<input type="submit" name="submit"/>
+    </form>
+
+    <hr/>
+    <!-- irema 小窗-->
+    <iframe width="100" height="100"
+        src="http://maps.goole.co.uk/maps?q=moma+new+york&amp:output=embed">
+    </iframe>
+
+    <hr/>
+    <a href="www.google.com" target="_blank" title="另開新視窗">Goole</a>
+</body>
+</html>
